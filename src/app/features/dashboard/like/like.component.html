@@ -1,0 +1,15 @@
+<div class="like">
+  @if (movies[0].length>0) {
+    <h2>Movies</h2>
+    <app-items [items]="movies[0]" [isLike]="true" type="movie"/>
+  }
+  @if (movies[1].length>0) {
+    <h2>TV</h2>
+    <app-items [items]="movies[1]" [isLike]="true"  type="tv"/>
+  }
+  @if (movies[2].length>0) {
+    <h2>Peoples</h2>
+    <app-items [items]="movies[2]" [isLike]="true" type="person"/>
+  }
+
+</div>

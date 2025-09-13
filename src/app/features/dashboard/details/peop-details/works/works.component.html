@@ -1,0 +1,77 @@
+
+  <div class="container">
+    <div class="head">
+      <h3>The Works as {{head}}</h3>
+    </div>
+  <div class="works">
+  <div class="cont" [style.transform]="'translateX(-'+ counter * 50 +'%)'">
+    @for (work of items; track $index) {
+      <div class="work">
+        <div class="top">
+          <div class="left">
+            @if (work.poster_path) {
+                          <img [src]="'https://image.tmdb.org/t/p/w342'+work.poster_path" alt="" (click)="route(work)" loading="lazy">
+            }
+            @else {
+              <div class="alt"></div>
+            }
+          </div>
+        <div class="right">
+          <div>
+            <span>Work name</span>
+            {{work.original_title}}
+          </div>
+
+            @if (head=="Actor") {
+              <div>
+                <span>Character name</span>
+                {{work.character}}
+              </div>
+              <div>
+                <span>Order in Cast</span>
+                {{work.order+1}}
+              </div>
+            }
+            @else if (head=="Maker") {
+              <div>
+                <span>Department</span>
+                {{work.department}}
+              </div>
+              <div>
+                <span>Job</span>
+                {{work.job}}
+              </div>
+            }
+
+
+
+            <div>
+            <span>Release Date</span>
+            {{work.release_date||"----/--/--"}}
+          </div>
+
+
+
+        </div>
+</div>
+         <!-- <div class="bottom">
+          <span>
+            Work Overview
+          </span>
+          {{work.overview}}
+        </div> -->
+       </div>
+    }
+
+  </div>
+
+
+
+</div>
+  @if (works.length>2) {
+        <span class="arw-left" (click)="left()"><i [style.color]="isLeft?'white':'#535252'" class="fa-solid fa-angle-left"></i></span>
+
+        <span class="arw-right" (click)="right()"><i [style.color]="isRight?'white':'#535252'" class="fa-solid fa-angle-right"></i></span>
+  }
+</div>
+

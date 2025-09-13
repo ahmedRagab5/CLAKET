@@ -1,0 +1,21 @@
+<div class="slider-container" [style.width]="numMove>0?'100%':'480px'">
+  <div class="cont">
+    <div
+      [class]="'slider-track'+ ' ' +(numMove==1?'one':'many') "
+      [style.transform]="'translateX(-' + (currentIndex * 80) + 'px)'"
+      [style.transition]="transitionEnabled ? 'transform 0.5s ease' : 'none'"
+    >
+      @for (i of images; track $index) {
+      <div [class]="'slider-item index-'+($index) +' '+ (numMove==1?'one-'+($index==center):'many') " [style.transition]="transitionEnabled ? '0.5s ease' : 'none'">
+        <!-- {{i.id}} -->
+        <img [src]="'https://image.tmdb.org/t/p/w154'+i.poster_path" alt="" (click)="rout(i.id)" loading="lazy">
+      </div>
+
+    }
+
+    </div>
+
+  </div>
+  <span class="right" (click)="right()"><i class="fa-solid fa-angle-right"></i></span>
+  <span class="left" (click)="left()"><i class="fa-solid fa-angle-left"></i></span>
+</div>

@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  --main-color:#212529;
+  --sec-color:black;
+  /* scroll-behavior:; */
+}
+
+body{
+  background-color: black;
+}
+
+@media (max-width:789px) {
+  html{
+    font-size: 12px;
+  }
+}

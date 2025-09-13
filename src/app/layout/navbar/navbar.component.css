@@ -1,0 +1,128 @@
+nav{
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+.nav-container{
+  margin: 1rem 2rem;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.logo{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  span{
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: 1px 1px black;
+    color: white;
+  }
+}
+.links-par{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links{
+  padding: .5rem;
+  border: 5px solid var(--main-color) ;
+  border-radius: 15px;
+  background-color: var(--sec-color);
+  width: fit-content;
+
+}
+.links ul{
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  align-items: center;
+  gap: 10px;
+  li{
+    /* padding: 5px ; */
+    list-style: none;
+    min-width: 3rem;
+    text-align: center;
+    cursor: pointer;
+    a{
+      padding: 5px ;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+.links ul li:hover a:not(.active){
+  color: rgb(98, 88, 88);
+}
+.active{
+  background-color:var(--main-color) ;
+  border-radius: 5px;
+  padding: 5px;
+}
+.search{
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  span{
+    color: white;
+    font-size: 1.5rem;
+  }
+
+}
+.search input{
+  border: 0;
+  background-color: transparent;
+  color: white;
+}
+.search input::placeholder{
+  color: white;
+}
+.search input:focus-visible{
+  outline: 0;
+}
+.menu{
+  display: none;
+}
+@media (max-width:789px) {
+  .links{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    background-color: #0000005e;
+    width: 10rem;
+    border-width: 2px;
+  }
+  ul{
+    flex-direction: column;
+    li{
+          width: 100%;
+    }
+  }
+
+  .menu{
+    display: block;
+  }
+  i{
+    font-size: 1.5rem;
+  }
+  input{
+    width: 5rem;
+    font-size: 1.5rem;
+  }
+  .logo{
+    flex-direction: column;
+  }
+}
+
+@media (min-width:790px){
+  .links{
+    display: block;
+  }
+}

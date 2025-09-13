@@ -1,0 +1,17 @@
+@if (isWait) {
+  <app-wait></app-wait>
+}
+@else {
+  <div class="slider">
+  <img [src]="getImg(i)" class="d-block w-100" alt="movie" loading="lazy">
+
+  @if (movies.length>0) {
+    <app-list (leftClicked)="left()" (rightClicked)="right()" [items]="movies" [numMove]="1"/>
+  }
+<div class="back">
+</div>
+</div>
+
+
+}
+

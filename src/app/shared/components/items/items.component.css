@@ -1,0 +1,31 @@
+.items{
+  display: grid;
+  grid-template-columns: repeat(5,minmax(200px,1fr));
+  gap: 20px;
+  .item{
+    position: relative;
+    /* border-radius: 15px; */
+
+    .img{
+      overflow: hidden;
+      min-height: 300px;
+      border-radius: 15px;
+      border: 5px solid transparent;
+    }
+    p{
+      text-align: center;
+      color: white;
+    }
+  }
+}
+.item:hover .cont .img{
+  border: 5px solid rgb(125, 117, 117);
+  cursor: pointer;
+}
+
+.del{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}

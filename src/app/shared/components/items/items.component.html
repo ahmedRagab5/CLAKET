@@ -1,0 +1,17 @@
+<div class="items">
+  @for (item of items; track $index) {
+    <div class="item" >
+      @if (isLike) {
+        <div class="del" (click)="remove(item.id)">
+          <i class="fa-solid fa-x" style="color: #ea3434;"></i>
+        </div>
+      }
+      <div class="cont" (click)="rout(item)">
+        <div class="img">
+          <img [src]="'https://image.tmdb.org/t/p/w342'+(item.poster_path ||item.profile_path)" alt="" width="100%" height="100%" loading="lazy">
+        </div>
+        <p>{{item.original_title || item.original_name}}</p>
+      </div>
+    </div>
+  }
+</div>

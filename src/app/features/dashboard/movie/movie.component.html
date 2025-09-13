@@ -1,0 +1,14 @@
+@if (isWait) {
+  <app-wait></app-wait>
+}
+@else {
+  <div class="movie">
+  @if (movies.length>0) {
+    <app-items [items]="movies" [type]="type"/>
+  }
+  <div class="more">
+    <button class="btn btn-danger" (click)="more()">More</button>
+  </div>
+</div>
+
+}

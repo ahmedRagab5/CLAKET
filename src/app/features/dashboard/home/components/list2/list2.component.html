@@ -1,0 +1,48 @@
+
+  <h3>{{header}}</h3>
+  <div class="list">
+    @if (items.length>0) {
+      <div [class]="'slider-container arrow-type'+arrowType" [style.width]="numMove>0?'100%':'480px'">
+        <div class="cont">
+          <div
+            [class]="'slider-track' "
+            [style.transform]="'translateX(-' + (currentIndex * (100/numShow) )+ '%)'"
+            [style.transition]="transitionEnabled ? 'transform 0.5s ease' : 'none'"
+          >
+            @for (movie of movies; track $index) {
+              <div [class]="'slider-item index-'+($index)  " [style.transition]="transitionEnabled ? 'transform 0.5s ease' : 'none'" (click)="rout(movie.id)" [style.width]="(100/numShow)-2 + '%'">
+
+                <div class="img">
+                  <img [src]="'https://image.tmdb.org/t/p/w342'+(movie.poster_path || movie.profile_path)" alt="" loading="lazy">
+                </div>
+                <p style="text-align: center;color: white;">{{movie.original_title || movie.original_name}}</p>
+                @if (movie.job !==null) {
+                  <p  style="text-align: center;color: rgb(123, 101, 101);" >{{movie.job}}</p>
+                }
+
+              </div>
+            }
+
+          </div>
+        </div>
+      @if (items.length>4) {
+        <span class="right" (click)="right()"><i class="fa-solid fa-angle-right"></i></span>
+        <span class="left" (click)="left()"><i class="fa-solid fa-angle-left"></i></span>
+      }
+      </div>
+
+    }
+  </div>
+
+    <!-- @if(movies.length>0){
+
+
+  <ngx-slick-carousel class="carousel" [config]="slideConfig">
+    @for (movie of movies; track $index) {
+      <div ngxSlickItem class="slide">
+        <img [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" alt="{{ movie.title }}">
+      </div>
+    }
+
+</ngx-slick-carousel>
+} -->

@@ -1,0 +1,9 @@
+.movie{
+  padding: 100px;
+}
+.more{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

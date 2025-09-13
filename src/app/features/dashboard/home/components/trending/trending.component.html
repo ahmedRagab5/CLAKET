@@ -1,0 +1,23 @@
+<div class="trending">
+  <div class="container">
+    <div class="section">
+      @if (movies.length>0) {
+        <app-list2 [items]="movies" [isTrend]="true" title="Movies" type="movie" [numMove]="4" [numShow]="5"/>
+      }
+    </div>
+    <div class="section">
+      @if (tv.length>0) {
+        <app-list2 [items]="tv" [isTrend]="true" title="TV" type="tv" [numMove]="4" [numShow]="5"/>
+      }
+    </div>
+    <div class="section">
+      @if (people.length>0) {
+        <app-list2 [items]="people" [isTrend]="true" title="People" type="person" [numMove]="4" [numShow]="5" />
+      }
+    </div>
+
+
+
+  </div>
+</div>
+

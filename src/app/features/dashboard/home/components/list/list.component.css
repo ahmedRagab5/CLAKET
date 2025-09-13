@@ -1,0 +1,64 @@
+.slider-container {
+  width: 480px; /* 75px * 5 + 6*5px + 75 */
+
+  /* border: 1px solid #ccc; */
+
+}
+.cont{
+  /* position: relative; */
+  overflow-x: hidden; /* يخفي الزائد في الاتجاه العرضي (أفقي) */
+  overflow-y: auto;
+}
+.slider-track {
+  display: flex;
+  gap: 5px;
+  padding: 0 5px;
+
+}
+.slider-track.many{
+  gap: 1.25%;
+  padding: 0 1.25%;
+  transform: translateX(5px);
+}
+.slider-item {
+  max-width: 75px;
+  flex-shrink: 0;
+  transition: 500ms;
+  display: flex;
+  align-items: end;
+}
+.slider-item.many{
+  max-width: 19%;
+
+}
+.slider-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.left , .right{
+  position: absolute;
+  cursor: pointer;
+  bottom: 75px;
+  transform: translatey(50%);
+  font-size: 40px;
+  i{
+    color: rgb(255, 255, 255);
+  }
+}
+.left{
+
+  left: -100px;
+
+}
+.right{
+
+  right: -100px;
+
+}
+.one-true{
+  transform: translateY(-10px);
+  max-width: 150px !important;
+}

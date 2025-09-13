@@ -1,0 +1,83 @@
+@if (isWait) {
+  <app-wait></app-wait>
+}
+@else {
+  <div class="details" >
+  <div class="top">
+    <div class="left">
+      <div class="img">
+        <img [src]="'https://image.tmdb.org/t/p/w500'+person.profile_path" alt=""  >
+      </div>
+      <div class="like">
+          @if (isLike) {
+            <i class="fa-solid fa-heart" style="color: #ba1c1c;cursor: pointer;" (click)="like()"></i>
+          }
+          @else {
+            <i class="fa-regular fa-heart" style="color: white;cursor: pointer;" (click)="like()"></i>
+          }
+      </div>
+    </div>
+    <div class="right">
+        <div>
+          <span >Name</span>
+          {{person.name}}
+        </div>
+        @if (person.birthday) {
+                  <div>
+          <span >Birthday</span>
+          {{person.birthday}}
+        </div>
+        }
+
+        @if (person.deathday) {
+          <div>
+            <span >Deathday</span>
+            {{person.deathday}}
+          </div>
+        }
+        @if (person.known_for_department) {
+          <div>
+            <span >Department</span>
+            {{person.known_for_department}}
+          </div>
+        }
+        @if (person.place_of_birth) {
+          <div>
+            <span >Place of Birth</span>
+            {{person.place_of_birth}}
+          </div>
+        }
+        @if (person.popularity) {
+          <div>
+            <span >Popularity in TMDB</span>
+            {{person.popularity}}
+          </div>
+        }
+        @if (cast.length>0) {
+          <div>
+            <span >Num of Works as Actor</span>
+            {{cast.length}}
+          </div>
+        }
+        @if (crew.length>0) {
+           <div>
+            <span >Num of Works as Maker</span>
+            {{crew.length}}
+          </div>
+        }
+
+
+    </div>
+  </div>
+  <div class="bottom">
+    @if (cast.length>0) {
+
+      <app-works [works]="cast" head="Actor"></app-works>
+    }
+    @if (crew.length>0) {
+      <app-works [works]="crew" head="Maker"></app-works>
+    }
+  </div>
+</div>
+
+}
