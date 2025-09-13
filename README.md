@@ -19,6 +19,9 @@ Interactive movie website using **TMDb API** to display movie data and images in
 ---
 ✨ Feel free to contribute or suggest new features!
 
+## 🎥 Demo
 
-https://github.com/user-attachments/assets/8def5156-54bc-45d8-a6e0-3910fe9dc494
+[![Watch the video](https://img.youtube.com/vi/YOVKSaFhI3k/0.jpg)](https://www.youtube.com/watch?v=YOVKSaFhI3k)
+
+
 
